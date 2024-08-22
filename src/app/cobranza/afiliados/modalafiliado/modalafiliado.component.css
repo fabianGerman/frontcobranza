@@ -1,0 +1,19 @@
+.card-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  .main-content {
+    flex: 1;
+  }
+  aside {
+    width: 75%;
+    padding-left: 20px;
+  }
+  .text-left {
+    text-align: left !important;
+  }
+
+  .table-container {
+    max-height: 250px; /* ajusta este valor según lo necesites */
+    overflow-x: auto;
+}

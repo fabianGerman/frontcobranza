@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
+#searchInput {
+    border: none;
+    outline: none;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  /* Cuando el input gane el foco, se agregará un borde azul en la parte inferior */
+  
+  #searchInput:focus {
+    border-bottom: 2px solid #4575b6;
+  }
+
+  .input-container {
+    display: flex;
+    align-items: center; /* Alinea verticalmente */
+  }
+  
+  .input-button-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espacio entre el input y el botón */
+  }
+  
+  /* Ajusta el ancho del input */
+  .mat-input-element {
+    flex: 1;
+  }
+
+  .mat-table-responsive{
+    overflow-x: auto;
+  }
+
+  @media screen and (max-width: 600px) {
+    .mat-table-responsive {
+      overflow-x: auto;
+      display: block;
+    }
+  }
+
+  .table-container {
+    max-height: auto;
+    /* ajusta este valor según lo necesites */
+    overflow-y: auto;
+  }
+
+.mat-column-IdPrestador,
+.mat-column-NroPrestador,
+.mat-column-CUIT_CUIL,
+.mat-column-Nombre,
+.mat-column-Tipo,
+.mat-column-ConvenioCamara,
+.mat-column-ConvenioSaludJujuy,
+.mat-column-Direccion {
+  max-width: 200px; /* Ajusta el ancho máximo según tus necesidades */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Puedes agregar un efecto de "ellipsis" si el contenido es muy largo */
+  white-space: nowrap;
+}
+
+.mat-column-Nombre{
+  max-width: 300px; /* Ajusta el ancho máximo según tus necesidades */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Puedes agregar un efecto de "ellipsis" si el contenido es muy largo */
+  white-space: nowrap;
+}
+
+.mat-paginator {
+  width: 100%;
+  justify-content: center;
+}
+
+.mat-column-Direccion {
+  white-space: normal;
+  word-wrap: break-word;
+}

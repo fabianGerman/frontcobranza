@@ -1,0 +1,159 @@
+<app-nav></app-nav>
+
+<div class="container scroll-y">
+
+    <h1 class="mt-1 mb-5 pb-1  title">
+        <span>FICHA DE AFILIADO</span>
+    </h1>
+
+    <button class="button-right" mat-fab aria-label="Example icon button with a delete icon"
+        (click)="uploadToDetalle(element)">
+        <mat-icon>person</mat-icon>
+    </button>
+
+</div>
+
+<div class="card-columns">
+
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">NROº AFILIADO</h4>
+            <p class="card-text">{{afiliado.af_nro}}</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">CUIL AFILIADO</h4>
+            <p class="card-text">{{afiliado.af_cuil}}</p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">NOMBRE AFILIADO</h4>
+            <p class="card-text">{{afiliado.af_nombres}}</p>
+        </div>
+    </div>
+</div>
+<div class="card-columns">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">ESTADO AFILIADO</h4>
+            <p class="card-text">{{afiliado.activo === 1 ? 'ACTIVO' : 'INACTIVO'}}</p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">FECHA ACTIVACION</h4>
+            <p class="card-text">{{afiliado.act_fechadesde}}</p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">FECHA INACTIVACION</h4>
+            <p class="card-text">́́{{afiliado.act_fechahasta}}</p>
+        </div>
+    </div>
+</div>
+<div class="card-columns">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">OBRA SOCIAL</h4>
+            <p class="card-text">{{afiliado.os_nro}} - {{afiliado.os_siglas}}</p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">PLAN</h4>
+            <p class="card-text">{{afiliado.pl_nombre}}</p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">VIGENCIA</h4>
+            <p class="card-text">{{afiliado.af_planvigente === 1 ? 'SI' : 'NO'}}</p>
+        </div>
+    </div>
+</div>
+<div class="card-columns">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">ID EMPRESA</h4>
+            <p class="card-text">{{afiliado.emp_id}}</p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">CUIT EMPRESA</h4>
+            <p class="card-text">{{afiliado.emp_cuit}}</p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">NOMBRE EMPRESA</h4>
+            <p class="card-text">{{afiliado.emp_razonsocial}}</p>
+        </div>
+    </div>
+</div>
+
+<div class="mat-elevation-z8 mat-table-responsive table-container">
+    <table mat-table [dataSource]="dataSource" id="names">
+
+        <!-- Id Column -->
+        <ng-container matColumnDef="ap_periodoaporte">
+            <th mat-header-cell *matHeaderCellDef class=" text-center"> PERIODO </th>
+            <td mat-cell *matCellDef="let element" class=" text-center" (dblclick)="openDialog(element)"> {{
+                element.PERIODO }} </td>
+        </ng-container>
+
+        <!-- Id Column -->
+        <ng-container matColumnDef="CUIT">
+            <th mat-header-cell *matHeaderCellDef class=" text-center"> CUIT </th>
+            <td mat-cell *matCellDef="let element" class=" text-center"> {{ element.CUIT }} </td>
+        </ng-container>
+
+        <!-- Id Column -->
+        <ng-container matColumnDef="RAZON_SOCIAL">
+            <th mat-header-cell *matHeaderCellDef class=" text-center"> RAZON SOCIAL </th>
+            <td mat-cell *matCellDef="let element" class=" text-center"> {{ element.RAZON_SOCIAL }} </td>
+        </ng-container>
+
+        <!-- Id Column -->
+        <ng-container matColumnDef="ap_sumaaporte">
+            <th mat-header-cell *matHeaderCellDef class=" text-center"> APORTE </th>
+            <td mat-cell *matCellDef="let element" class=" text-center"> {{ element.APORTE }}</td>
+        </ng-container>
+
+        <!-- Id Column -->
+        <ng-container matColumnDef="ap_sumacontribucion">
+            <th mat-header-cell *matHeaderCellDef class=" text-center"> CONTRIBUCION </th>
+            <td mat-cell *matCellDef="let element" class=" text-center"> {{ element.CONTRIBUCION }} </td>
+        </ng-container>
+
+        <!-- Id Column -->
+        <ng-container matColumnDef="ap_sumaremuneracion">
+            <th mat-header-cell *matHeaderCellDef class=" text-center"> REMUNERACION </th>
+            <td mat-cell *matCellDef="let element" class=" text-center"> {{ element.REMUNERACION }} </td>
+        </ng-container>
+
+        <!-- Id Column -->
+        <ng-container matColumnDef="ap_contribucionaporte">
+            <th mat-header-cell *matHeaderCellDef class=" text-center"> TOTAL </th>
+            <td mat-cell *matCellDef="let element" class=" text-center"> {{ element.TOTAL }} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <!--
+    <mat-paginator [pageSizeOptions]="[5, 10, 20, 50, 100]"
+                   showFirstLastButtons
+                   (page)="onPageChange($event)"
+                   [length]="totalRegistros"
+                   [pageSize]="registrosPorPagina"
+                   
+                   aria-label="Select page of periodic elements">
+    </mat-paginator>
+    -->
+</div>

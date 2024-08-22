@@ -1,0 +1,23 @@
+.container {
+    display: flex;
+    justify-content: center; /* Centra el título horizontalmente */
+    align-items: center; /* Centra los elementos verticalmente */
+    position: relative;
+}
+
+.table-container {
+    max-height: auto;
+    /* ajusta este valor según lo necesites */
+    overflow-y: auto;
+}
+
+.button-right {
+    margin-left: auto;
+    right: 0; /* Mueve el botón al margen derecho */
+}
+
+.title {
+    flex-grow: 1;
+    text-align: center;
+    margin: 0;
+}
