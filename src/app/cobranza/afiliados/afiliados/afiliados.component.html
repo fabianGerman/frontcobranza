@@ -1,17 +1,18 @@
 <app-nav></app-nav>
 
-  <form  method="post">
-
+  <form method="post">
+  
     <mat-form-field class="input-container">
-      
+  
       <mat-label>Ingresar Datos</mat-label>
       <div class="input-button-container">
-        <input matInput type="text" placeholder="datos..." [(ngModel)]="text" name="text" id="text" required (input)="update_table()">
+        <input matInput type="text" placeholder="datos..." [(ngModel)]="text" name="text" id="text" required
+          (input)="update_table()">
         <button mat-raised-button color="primary" type="button" (click)="update_table()">Buscar</button>
       </div>
       <!--
-      <mat-error *ngIf="text.invalid">{{getErrorMessage()}}</mat-error>
-      -->
+        <mat-error *ngIf="text.invalid">{{getErrorMessage()}}</mat-error>
+        -->
     </mat-form-field>
   </form>
   
@@ -21,7 +22,7 @@
   
   <div class="text-center">
     <h1 class="mt-1 mb-5 pb-1">
-      <span >LISTA DE AFILIADOS</span>
+      <span>LISTA DE AFILIADOS</span>
     </h1>
   </div>
   
@@ -36,10 +37,10 @@
   
       <!-- Id Column -->
       <ng-container matColumnDef="NRO">
-          <th mat-header-cell *matHeaderCellDef class=" text-center"> Nº AFILIADO </th>
-          <td mat-cell *matCellDef="let element" class=" text-center"> 
-            <a href="javascript:void(0)" (click)="navigateToAfiliado(element)">{{ element.NRO }}</a>
-          </td>
+        <th mat-header-cell *matHeaderCellDef class=" text-center"> Nº AFILIADO </th>
+        <td mat-cell *matCellDef="let element" class=" text-center">
+          <a href="javascript:void(0)" (click)="navigateToAfiliado(element)">{{ element.NRO }}</a>
+        </td>
       </ng-container>
   
       <!-- Id Column -->
@@ -50,26 +51,26 @@
   
       <!-- Id Column -->
       <ng-container matColumnDef="NOMBRES">
-          <th mat-header-cell *matHeaderCellDef class=" text-center"> NOMBRES </th>
-          <td mat-cell *matCellDef="let element" class=" text-center"> {{element.NOMBRES}} </td>
+        <th mat-header-cell *matHeaderCellDef class=" text-center"> NOMBRES </th>
+        <td mat-cell *matCellDef="let element" class=" text-center"> {{element.NOMBRES}} </td>
       </ng-container>
   
       <!-- Id Column -->
       <ng-container matColumnDef="PLANVIGENTE">
-          <th mat-header-cell *matHeaderCellDef class=" text-center"> VIGENCIA </th>
-          <td mat-cell *matCellDef="let element" class=" text-center"> {{element.PLANVIGENTE === 1 ? 'SI' : 'NO'}} </td>
+        <th mat-header-cell *matHeaderCellDef class=" text-center"> VIGENCIA </th>
+        <td mat-cell *matCellDef="let element" class=" text-center"> {{element.PLANVIGENTE === 1 ? 'SI' : 'NO'}} </td>
       </ng-container>
   
       <!-- Id Column -->
       <ng-container matColumnDef="BAJA">
-          <th mat-header-cell *matHeaderCellDef class=" text-center"> BAJA </th>
-          <td mat-cell *matCellDef="let element" class=" text-center"> {{element.BAJA === 1 ? 'SI' : 'NO'}} </td>
+        <th mat-header-cell *matHeaderCellDef class=" text-center"> BAJA </th>
+        <td mat-cell *matCellDef="let element" class=" text-center"> {{element.BAJA === 1 ? 'SI' : 'NO'}} </td>
       </ng-container>
   
       <!-- Id Column -->
       <ng-container matColumnDef="DESCARGAR">
         <th mat-header-cell *matHeaderCellDef class=" text-center"> DESCARGAR </th>
-        <td mat-cell *matCellDef="let element" class=" text-center"> 
+        <td mat-cell *matCellDef="let element" class=" text-center">
           <button mat-fab aria-label="Example icon button with a delete icon" (click)="uploadToAfiliado(element)">
             <mat-icon>person</mat-icon>
           </button>
@@ -80,13 +81,8 @@
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
   
-    <mat-paginator [pageSizeOptions]="[5, 10, 20, 50, 100]"
-                   showFirstLastButtons
-                   (page)="onPageChange($event)"
-                   [length]="totalRegistros"
-                   [pageSize]="registrosPorPagina"
-                   
-                   aria-label="Select page of periodic elements">
+    <mat-paginator [pageSizeOptions]="[5, 10, 20, 50, 100]" showFirstLastButtons (page)="onPageChange($event)"
+      [length]="totalRegistros" [pageSize]="registrosPorPagina" aria-label="Select page of periodic elements">
     </mat-paginator>
   </div>
 
