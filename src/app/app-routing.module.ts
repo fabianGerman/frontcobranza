@@ -14,6 +14,7 @@ import { EmpleadoimporteComponent } from './cobranza/empresa/empleadoimporte/emp
 import { EmpleadodeudaComponent } from './cobranza/empresa/empleadodeuda/empleadodeuda.component';
 import { ConveniosComponent } from './cobranza/convenio/convenios/convenios.component';
 import { AsociacionComponent } from './cobranza/convenio/asociacion/asociacion.component';
+import { DetalleComponent } from './cobranza/convenio/detalle/detalle.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'login',pathMatch:'full'},
@@ -30,6 +31,7 @@ const routes: Routes = [
   {path:'empleadodeuda',component:EmpleadodeudaComponent,canActivate:[AuthGuard]},
   {path:'convenios',component:ConveniosComponent,canActivate:[AuthGuard]},
   {path:'asociacion',component:AsociacionComponent,canActivate:[AuthGuard]},
+  {path:'conveniodetalles',component:DetalleComponent,canActivate:[AuthGuard]},
   {path:'**',redirectTo:'home',pathMatch:'full'}
 ];
 

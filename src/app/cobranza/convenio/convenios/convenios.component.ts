@@ -21,7 +21,8 @@ export class ConveniosComponent implements AfterViewInit {
     'ID',
     'RESOLUCION',
     'DESCRIPCION',
-    'INHABILITADO'
+    'INHABILITADO',
+    'DETALLES'
   ];
   
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -60,5 +61,8 @@ export class ConveniosComponent implements AfterViewInit {
     this.registrosPorPagina = event.pageSize;
     this.listar_convenios();
   }
-
+  redirectToPage(element: any){
+    this.tds.setData(element);
+    this.router.navigate(['/conveniodetalles'])
+  }
 }

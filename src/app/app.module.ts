@@ -91,6 +91,7 @@ import { EmpleadodeudaComponent } from './cobranza/empresa/empleadodeuda/emplead
  */
 import { ConveniosComponent } from './cobranza/convenio/convenios/convenios.component';
 import { AsociacionComponent } from './cobranza/convenio/asociacion/asociacion.component';
+import { DetalleComponent } from './cobranza/convenio/detalle/detalle.component';
 
 
 @NgModule({
@@ -111,7 +112,8 @@ import { AsociacionComponent } from './cobranza/convenio/asociacion/asociacion.c
     EmpleadoimporteComponent,
     EmpleadodeudaComponent,
     ConveniosComponent,
-    AsociacionComponent
+    AsociacionComponent,
+    DetalleComponent
   ],
   imports: [
     BrowserModule,
